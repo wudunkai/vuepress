@@ -1,0 +1,22 @@
+{
+  "name": "20200124",
+  "description": "vuepress",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:vuepress-theme-hope/online-demo.git"
+  },
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "blog:dev": "vuepress dev blog",
+    "blog:build": "vuepress build blog",
+    "dev": "npm run blog:dev",
+    "build": "npm run blog:build"
+  },
+  "devDependencies": {
+    "@vuepress/client": "2.0.0-beta.61",
+    "vue": "^3.2.47",
+    "vuepress": "2.0.0-beta.61",
+    "vuepress-theme-hope": "2.0.0-beta.186"
+  }
+}
