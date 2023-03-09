@@ -4,8 +4,7 @@ home: true
 layout: BlogHome
 icon: home
 title: 首页
-bgImage: /bg.jpg
-heroImage: /logo.webp
+bgImage: /bgImage.jpg
 heroText: 做前端死路一条
 heroFullScreen: true
 tagline: 后端也是 ——鲁迅

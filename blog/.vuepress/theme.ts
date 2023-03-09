@@ -31,7 +31,7 @@ export default hopeTheme({
 
       blog: {
         description: "一个不对劲的前端开发者",
-        intro: "/",
+        intro: "/intro.html",
       },
 
       // page meta
