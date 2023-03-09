@@ -14,8 +14,8 @@ dist-ssr
 coverage
 *.local
 
-/cypress/videos/
-/cypress/screenshots/
+/blog/.vuepress/.cache
+/blog/.vuepress/.temp
 
 # Editor directories and files
 .vscode/*

@@ -47,9 +47,9 @@ export default hopeTheme({
       // @ts-ignore
       provider: "Giscus",
       repo: "wudunkai/vuepress",
-      repoId: "R_kgDOJG1Rkg",
+      repoId: "R_kgDOJHL2nQ",
       category: "Q&A",
-      categoryId: "DIC_kwDOJG1Rks4CUum6",
+      categoryId: "DIC_kwDOJHL2nc4CUvuX",
     },
 
     // Disable features you don’t want here
