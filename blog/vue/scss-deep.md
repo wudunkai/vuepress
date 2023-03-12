@@ -8,7 +8,7 @@ tag:
   - Scss
 ---
 
-# vue3.0 深度选择器＞＞＞ 和 /deep/ 和 ::v-deep 被弃用
+# Vue3.0 深度选择器＞＞＞ 和 /deep/ 、 ::v-deep 被弃用
 
 **>>>** 和 **/deep/**在 vue3 中使用直接报错。
 

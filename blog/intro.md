@@ -1,11 +1,8 @@
 ---
 icon: info
+date: 2023-03-09
 ---
 
 # 介绍页
 
 这个人很懒，什么都没留下。
-
-<!-- more -->
-
-![](/intro.png#pic_center =324x432)
