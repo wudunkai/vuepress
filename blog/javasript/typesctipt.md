@@ -17,7 +17,7 @@ TypeScript 是 JavaScript 的超集，遵循最新的 es6、es5 规范。TypeScr
 
 ## 1.TypeScript 中的数据类型
 
-```javascript
+```ts
 // 布尔类型（boolean）
 let bool: boolean = false;
 
@@ -101,7 +101,7 @@ a = (() => {
 
 ## 2.TypeScript 中的函数
 
-```javascript
+```ts
 // 函数定义
 // 函数声明发;
 function run(): string {
@@ -179,7 +179,7 @@ setTimeout(() => {}, 100);
 
 ## 3.TypeScript 的类
 
-```javascript
+```ts
 // 类的定义;
 //class Person{
 //  name: string;
@@ -379,7 +379,7 @@ console.log(d.eat());
 
 接口的作用，在面向对象的编程中，接口是一种规范的定义，它定义了行为和动作的规范，在程序设计里面，接口起到一种限制和规范作用，接口定义了某一批类所需要遵守的规范，接口不关心这些类的内部状态数据，也不关心这些类里面方法的实现细节，它只规定这批类里必须提供某些方法，提供这些方法的类就可以满足实际需要。typescript 中的接口类似于 java，同时还增加了更灵活的接口类型，包括属性、函数、可索引和类等。
 
-```javascript
+```ts
 // 属性类接口
 interface labelInfo {
   name: string;
@@ -516,7 +516,7 @@ let w = new Web("张三");
 
 any 放弃了类型检测
 
-```javascript
+```ts
 // 传入什么参数类型和返回的参数类型一致
 // 泛型:可以支持不特定的属性类型
 function getData<T>(value: T): T {
@@ -655,7 +655,7 @@ oMysql.add(u);
 
 ## 6.TypeScript 中的模块
 
-```javascript
+```ts
 // es6 模块化
 // db.ts
 let dbUrl = "xxxx";
@@ -711,65 +711,65 @@ oMysql.add(u);
 
 ## 7.TypeScript 命名空间
 
-```javascript
-  // 内部模块:内部模块,主要用于组织代码,避免命名冲突
-  // 命名空间
-  namespace A {
-    interface Animal {
-      name: string;
-      eat(val: string): void;
+```ts
+// 内部模块:内部模块,主要用于组织代码,避免命名冲突
+// 命名空间
+namespace A {
+  interface Animal {
+    name: string;
+    eat(val: string): void;
+  }
+  export class Person implements Animal {
+    name: string;
+    constructor(name: string) {
+      this.name = name;
     }
-    export class Person implements Animal {
-      name: string;
-      constructor(name: string) {
-        this.name = name;
-      }
-      eat() {
-        console.log(this.name + "在运动");
-      }
-      work(work: string) {
-        console.log(this.name + work);
-      }
+    eat() {
+      console.log(this.name + "在运动");
+    }
+    work(work: string) {
+      console.log(this.name + work);
     }
   }
-  let d = new A.Person("张三");
-  d.eat();
-  d.work("在工作");
+}
+let d = new A.Person("张三");
+d.eat();
+d.work("在工作");
 
-  // 命名空间模块化
+// 命名空间模块化
 
-  // 命名空间
-  // index.ts
-  export namespace A {
-    interface Animal {
-      name: string;
-      eat(val: string): void;
+// 命名空间
+// index.ts
+export namespace A {
+  interface Animal {
+    name: string;
+    eat(val: string): void;
+  }
+  export class Person implements Animal {
+    name: string;
+    constructor(name: string) {
+      this.name = name;
     }
-    export class Person implements Animal {
-      name: string;
-      constructor(name: string) {
-        this.name = name;
-      }
-      eat() {
-        console.log(this.name + "在运动");
-      }
-      work(work: string) {
-        console.log(this.name + work);
-      }
+    eat() {
+      console.log(this.name + "在运动");
+    }
+    work(work: string) {
+      console.log(this.name + work);
     }
   }
+}
 
-  import { A } from "./index";
-  let d = new A.Person("张三");
-  d.eat();
-  d.work("在工作");
+import { A } from "./index";
+let d = new A.Person("张三");
+d.eat();
+d.work("在工作");
 ```
 
 ![](/javascript/typescript/bg8.png)
 
 ## 8.TypeScript 装饰器
 
-```javascript
+```ts
 // 装饰器是一种特殊类型的声明，它能够附加到类声明，方法。属性参数上，可以修改类的行为。
 function logClass(params: any) {
   // console.log(params);

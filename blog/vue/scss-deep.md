@@ -20,25 +20,24 @@ tag:
 
 ![](/vue/scss-deep/bg.jpg)
 
-```javascript
+```vue
 //警告例子
 <style lang="scss" scoped>
-/deep/ .main{
-	height: 520px;
+/deep/ .main {
+  height: 520px;
 }
->>> .main{
-	height: 520px;
+>>> .main {
+  height: 520px;
 }
 ::v-deep .main {
-	height: 520px;
+  height: 520px;
 }
 </style>
 
-
 //正确例子
 <style lang="scss" scoped>
-:deep(.main){
-	height: 520px;
+:deep(.main) {
+  height: 520px;
 }
 </style>
 ```
