@@ -1,9 +1,9 @@
 ---
 date: 2023-03-10
 category:
-  - http
+  - Http
 tag:
-  - http-StatusCode
+  - Http-StatusCode
 ---
 
 # HTTP 状态码（HTTP Status Code）
