@@ -19,7 +19,7 @@ dependence:
     preview: /assets/links/VuePress-theme-hope.png
 ---
 
-## 框架与主题
+# 框架与主题
 
 <SiteInfo
   v-for="item in $frontmatter.dependence"
