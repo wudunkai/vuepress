@@ -10,13 +10,13 @@ dependence:
     logo: https://v2.vuepress.vuejs.org/images/hero.png
     url: https://v2.vuepress.vuejs.org/zh/
     repo: https://github.com/vuepress/vuepress-next
-    preview: /assets/links/VuePress.png
+    # preview: /assets/links/VuePress.png
   - name: VuePress Theme Hope
     desc: 一个具有强大功能的 vuepress 主题✨
     logo: https://theme-hope.vuejs.press/logo.svg
     url: https://theme-hope.vuejs.press/zh/
     repo: https://github.com/vuepress-theme-hope/vuepress-theme-hope
-    preview: /assets/links/VuePress-theme-hope.png
+    # preview: /assets/links/VuePress-theme-hope.png
 ---
 
 # 框架与主题
