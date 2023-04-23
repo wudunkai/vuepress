@@ -19,7 +19,7 @@ const close = () => {
 };
 
 const InsertMenu = () => {
-  const navCenterElm = document.querySelector(".navbar-end");
+  const navCenterElm = document.querySelector("#app");
 
   if (!navCenterElm) {
     return;
@@ -134,15 +134,6 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-.MyMusic {
-  position: fixed;
-  right: 0.5rem;
-  top: 0.5rem;
-  z-index: 12;
-  cursor: pointer;
-  user-select: none;
-}
-
 .MyMusic_Play {
   background-color: #fff;
   user-select: none;
@@ -157,10 +148,10 @@ onMounted(() => {
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-
   transition: 0.3s;
   transform: scale(1);
   opacity: 1;
+  z-index: 9999;
   &.hide {
     top: 6%;
     opacity: 0;
@@ -190,19 +181,34 @@ onMounted(() => {
     color: #fff;
   }
 }
+@media (max-width: 719px) {
+  #app {
+    #MyMusic_Menu {
+      width: 1.7rem;
+      height: 1.7rem;
+      bottom: 7rem;
+    }
+  }
+}
 
 #MyMusic_Menu {
-  top: 1px;
+  right: 1rem;
+  bottom: 8rem;
+  width: 3rem;
+  height: 3rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  position: fixed;
   user-select: none;
   cursor: pointer;
   opacity: 0.7;
-  border-radius: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--theme-color);
-  height: 1.6rem;
-  width: 1.6rem;
+  z-index: 9999;
 
   .icon {
     font-size: 1.2rem;
