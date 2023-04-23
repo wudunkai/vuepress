@@ -8,7 +8,7 @@ export default hopeTheme({
     name: "20200124",
     url: "/",
   },
-  iconAssets: "iconfont",
+  iconAssets: "//at.alicdn.com/t/c/font_4033184_a4rgpt33su.css",
   logo: "/logo.webp",
   docsDir: "blog",
   blog: {
@@ -42,7 +42,9 @@ export default hopeTheme({
   },
   plugins: {
     blog: true,
-
+    copyCode: {
+      showInMobile: true,
+    },
     comment: {
       // @ts-ignore
       provider: "Giscus",
