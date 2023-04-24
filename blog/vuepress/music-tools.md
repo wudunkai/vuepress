@@ -12,6 +12,8 @@ tag:
 
 <!-- more -->
 
+![](/vuePress/bg1.png)
+
 ## 了解客户端配置的使用方法（client）
 
 在客户端配置文件中，@vuepress/client 包提供了一个 defineClientConfig 函数来帮助你定义客户端配置：
@@ -28,6 +30,8 @@ export default defineClientConfig({
 ```
 
 ==defineClientConfig== 方法里面的 api 使用，可以查看[官方文档](http://www.fenovice.com/doc/vuepress-next/advanced/cookbook/usage-of-client-config.html)
+
+![](/vuePress/bg2.png)
 
 ## 使用 api 方法创建公共组件
 
@@ -67,6 +71,8 @@ export default defineClientConfig({
 });
 ```
 
+![](/vuePress/bg3.png)
+
 ## 创建播放音乐组件
 
 ```npm
@@ -82,7 +88,6 @@ npm install vue-router --save
 import { onMounted, nextTick, ref } from "vue";
 import { useRouter } from "vue-router";
 
-import MyIcon from "./MyIcon.vue";
 import { globalMusicList } from "../data/music";
 
 import "aplayer/dist/APlayer.min.css";
@@ -100,7 +105,7 @@ const close = () => {
 };
 
 const InsertMenu = () => {
-  const navCenterElm = document.querySelector(".navbar-end");
+  const navCenterElm = document.querySelector("#app");
 
   if (!navCenterElm) {
     return;
@@ -206,7 +211,6 @@ onMounted(() => {
     <div class="MyMusic">
       <div class="MyMusic_Play" :class="{ hide: !display }">
         <div class="close" @click="close">
-          <!-- 这里就可以用的我们的公共组件了 -->
           <MyIcon name="close" />
         </div>
         <div id="GlobalAPlayer"></div>
@@ -216,15 +220,6 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-.MyMusic {
-  position: fixed;
-  right: 0.5rem;
-  top: 0.5rem;
-  z-index: 12;
-  cursor: pointer;
-  user-select: none;
-}
-
 .MyMusic_Play {
   background-color: #fff;
   user-select: none;
@@ -239,10 +234,10 @@ onMounted(() => {
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
     rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-
   transition: 0.3s;
   transform: scale(1);
   opacity: 1;
+  z-index: 9999;
   &.hide {
     top: 6%;
     opacity: 0;
@@ -272,19 +267,34 @@ onMounted(() => {
     color: #fff;
   }
 }
+@media (max-width: 719px) {
+  #app {
+    #MyMusic_Menu {
+      width: 1.7rem;
+      height: 1.7rem;
+      bottom: 7rem;
+    }
+  }
+}
 
 #MyMusic_Menu {
-  top: 1px;
+  right: 1rem;
+  bottom: 8rem;
+  width: 3rem;
+  height: 3rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  position: fixed;
   user-select: none;
   cursor: pointer;
   opacity: 0.7;
-  border-radius: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--theme-color);
-  height: 1.6rem;
-  width: 1.6rem;
+  z-index: 9999;
 
   .icon {
     font-size: 1.2rem;
@@ -307,11 +317,13 @@ onMounted(() => {
 ### data/music.ts 页面
 
 ```ts
-const basePath = "https://file.mo7.cc/music/";
+const basePath = "/music/";
 
 interface GetMusicOptions {
   name: string;
   artist: string;
+  urlType: string;
+  coverType: string;
 }
 
 interface MusicInfo {
@@ -323,38 +335,38 @@ interface MusicInfo {
 }
 
 const getMusicInfo = (opt: GetMusicOptions): MusicInfo => {
-  const musicPath = `${basePath}${opt.name}-${opt.artist}`;
+  const musicPath = `${basePath}${opt.artist}/${opt.name}`;
 
   return {
     name: opt.name,
     artist: opt.artist,
-    url: `${musicPath}/audio.mp3`,
-    cover: `${musicPath}/cover.webp`,
+    url: `${musicPath}/audio.${opt.urlType}`,
+    cover: `${musicPath}/cover.${opt.coverType}`,
     lrc: `${musicPath}/lyrics.lrc`,
   };
 };
 
 // 全局音乐列表
-export const globalMusicList: MusicInfo[] = [];
-
-globalMusicList.push(
+export const globalMusicList: MusicInfo[] = [
   getMusicInfo({
-    name: "光年之外",
-    artist: "G.E.M.邓紫棋",
-  })
-);
-globalMusicList.push(
+    name: "水星记",
+    artist: "郭顶",
+    urlType: "m4a",
+    coverType: "webp",
+  }),
   getMusicInfo({
-    name: "泡沫",
-    artist: "G.E.M.邓紫棋",
-  })
-);
-globalMusicList.push(
+    name: "若把你",
+    artist: "Kirsty刘瑾睿",
+    urlType: "m4a",
+    coverType: "jpg",
+  }),
   getMusicInfo({
-    name: "喜欢你",
-    artist: "G.E.M.邓紫棋",
-  })
-);
+    name: "想去海边",
+    artist: "夏日入侵企画",
+    urlType: "m4a",
+    coverType: "jpg",
+  }),
+];
 ```
 
 ### .vuepress/client.ts 引入组件显示播放器

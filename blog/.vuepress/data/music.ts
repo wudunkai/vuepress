@@ -1,8 +1,10 @@
-const basePath = "https://file.mo7.cc/music/";
+const basePath = "/music/";
 
 interface GetMusicOptions {
   name: string;
   artist: string;
+  urlType: string;
+  coverType: string;
 }
 
 interface MusicInfo {
@@ -14,35 +16,35 @@ interface MusicInfo {
 }
 
 const getMusicInfo = (opt: GetMusicOptions): MusicInfo => {
-  const musicPath = `${basePath}${opt.name}-${opt.artist}`;
+  const musicPath = `${basePath}${opt.artist}/${opt.name}`;
 
   return {
     name: opt.name,
     artist: opt.artist,
-    url: `${musicPath}/audio.mp3`,
-    cover: `${musicPath}/cover.webp`,
+    url: `${musicPath}/audio.${opt.urlType}`,
+    cover: `${musicPath}/cover.${opt.coverType}`,
     lrc: `${musicPath}/lyrics.lrc`,
   };
 };
 
 // 全局音乐列表
-export const globalMusicList: MusicInfo[] = [];
-
-globalMusicList.push(
+export const globalMusicList: MusicInfo[] = [
   getMusicInfo({
-    name: "光年之外",
-    artist: "G.E.M.邓紫棋",
-  })
-);
-globalMusicList.push(
+    name: "水星记",
+    artist: "郭顶",
+    urlType: "m4a",
+    coverType: "webp",
+  }),
   getMusicInfo({
-    name: "泡沫",
-    artist: "G.E.M.邓紫棋",
-  })
-);
-globalMusicList.push(
+    name: "若把你",
+    artist: "Kirsty刘瑾睿",
+    urlType: "m4a",
+    coverType: "jpg",
+  }),
   getMusicInfo({
-    name: "喜欢你",
-    artist: "G.E.M.邓紫棋",
-  })
-);
+    name: "想去海边",
+    artist: "夏日入侵企画",
+    urlType: "m4a",
+    coverType: "jpg",
+  }),
+];
