@@ -30,7 +30,7 @@ export default hopeTheme({
       displayFooter: true,
 
       blog: {
-        description: "一个不对劲的前端开发者",
+        description: "一个笨笨的前端开发者",
         intro: "/intro.html",
       },
 
