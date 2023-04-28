@@ -4,8 +4,7 @@ import { onMounted, onBeforeUnmount, ref } from "vue";
 const canvasCursor = ref();
 const popper = new Popper(
   {
-    shape: "star",
-    size: 2,
+    size: 3,
   },
   { opacity: 1, zIndex: 999999999 }
 );
