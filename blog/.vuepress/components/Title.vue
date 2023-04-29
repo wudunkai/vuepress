@@ -17,12 +17,12 @@ withDefaults(defineProps<Props>(), {
 
 <style scoped lang="scss">
 .title {
-  border-bottom: 2px solid #007b86;
+  border-bottom: 2px solid var(--theme-color);
   .title-main {
     width: 110px;
     text-align: center;
     color: #fff;
-    background: #007b86;
+    background: var(--theme-color);
     padding: 5px 0 1px 0;
     border-radius: 10px 10px 0 0;
     span {

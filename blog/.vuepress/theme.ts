@@ -8,7 +8,7 @@ export default hopeTheme({
     name: "20200124",
     url: "/",
   },
-  iconAssets: "//at.alicdn.com/t/c/font_4033184_a4rgpt33su.css",
+  iconAssets: "//at.alicdn.com/t/c/font_4045271_8sur28ukgm9.css",
   logo: "/logo.webp",
   docsDir: "blog",
   blog: {

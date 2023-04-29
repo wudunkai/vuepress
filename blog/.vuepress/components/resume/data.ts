@@ -3,23 +3,23 @@ export default {
   info: {
     // 头像照片
     avatar: "22.jpg",
-    jobIntention: "前端开发工程师",
     name: "张三",
-    sex: "女",
+    jobIntention: "前端开发工程师",
+    home: "杭州西湖",
+    sex: "男",
     age: 20,
-    english: "CET-4",
     tel: "1500000000",
     email: "xxxxx@163.com",
-    // 个人主页
-    index: "https://www.yuque.com/xxxxx",
+    ability: "",
   },
   // 教育经历
   educations: [
     {
       name: "xxxxxx大学",
-      date: "20xx.9-20xx.7",
+      start_time: "2016-09",
+      end_time: "2019-07",
       major: "人工智能专业",
-      diploma: "本科",
+      diploma: 1,
       descriptions: [
         "担任xx职务，获国家励志奖学金x次，一等奖学金x次。",
         "参与xxxxx活动，经历经历经历经历经历经历经。",
@@ -43,7 +43,8 @@ export default {
   projects: [
     {
       name: "啥啥啥啥啥啥平台(Vue + element)",
-      date: "2021.x-至今",
+      start_time: "2016-09",
+      end_time: "2019-07",
       major: "前端开发工程师",
       address: "https://gitee.com/teukkk/xxx",
       // 项目背景显示模式，ol为有序列表（前面是数字），ul为无序列表（前面是圆点），p为段落
@@ -57,11 +58,12 @@ export default {
       ],
     },
   ],
-  // 实习经历
+  // 工作经历
   experiences: [
     {
       name: "啥啥啥啥啥啥公司",
-      date: "2021.x-至今",
+      start_time: "2016-09",
+      end_time: "2019-07",
       position: "前端开发工程师",
       performance: [
         "你遇到了什么问题，你是怎么解决的，你遇到了什么问题，你是怎么解决的。你遇到了什么问题，你是怎么解决的。",

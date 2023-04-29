@@ -1,2 +1,15 @@
 // place your custom styles here
 @use "spin";
+
+.el-month-table {
+  display: inline-table;
+  margin: 0;
+  th,
+  td {
+    border: none;
+    padding: 0;
+  }
+  tr:nth-child(2n) {
+    background: none;
+  }
+}
