@@ -99,6 +99,22 @@ export default hopeTheme({
     },
     components: {
       components: ["SiteInfo"],
+      rootComponents: {
+        backToTop: true,
+        notice: [
+          {
+            path: "/",
+            title: "欢迎来到这个地方",
+            content: "这是一个记录前端学习的博客",
+            // actions: [
+            //   {
+            //     text: "立即访问",
+            //     link: "https://plugin-components.vuejs.press/zh/",
+            //   },
+            // ],
+          },
+        ],
+      },
     },
   },
 });

@@ -3,7 +3,6 @@ import { defineAsyncComponent } from "vue";
 import ElementPlus from "element-plus";
 import zhCn from "element-plus/dist/locale/zh-cn.mjs";
 
-import { confirm } from "./composables/index.js";
 const MyIcon = defineAsyncComponent(() => import("./components/MyIcon.vue"));
 const Content = defineAsyncComponent(() => import("./components/Content.vue"));
 const Title = defineAsyncComponent(() => import("./components/Title.vue"));
@@ -25,8 +24,6 @@ export default defineClientConfig({
     app.component("Title", Title);
     app.component("ResumeModify", ResumeModify);
   },
-  setup() {
-    confirm();
-  },
+  setup() {},
   rootComponents: [NavMusic, CursorEffects],
 });

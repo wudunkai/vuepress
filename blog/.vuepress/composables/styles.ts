@@ -13,6 +13,7 @@ const formula = {
   "light-7": "color(primary tint(70%))",
   "light-8": "color(primary tint(80%))",
   "light-9": "color(primary tint(90%))",
+  "dark-2": "color(primary shade(20%))",
   subMenuHover: "color(primary tint(70%))",
   subMenuBg: "color(primary tint(80%))",
   menuHover: "color(primary tint(90%))",
@@ -48,6 +49,7 @@ const getStyleTemplate = (data) => {
     "#c6e2ff": "light-7",
     "#d9ecff": "light-8",
     "#ecf5ff": "light-9",
+    "#337ecc": "dark-2",
   };
   Object.keys(colorMap).forEach((key) => {
     const value = colorMap[key];
