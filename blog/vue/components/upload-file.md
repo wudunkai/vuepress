@@ -330,4 +330,4 @@ server.on("request", async (req, res) => {
 server.listen(3001, () => console.log("正在监听 3001 端口"));
 ```
 
-项目链接 https://github.com/wudunkai/cases/vue/vue项目/pinia
+<!-- 项目链接 https://github.com/wudunkai/cases/vue/vue项目/pinia -->
