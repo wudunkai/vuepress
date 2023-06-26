@@ -18,8 +18,6 @@ tag:
 
 <!-- more -->
 
-![](/vue/scss-deep/bg.jpg)
-
 ```vue
 //警告例子
 <style lang="scss" scoped>

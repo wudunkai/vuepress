@@ -13,8 +13,6 @@ tag:
 
 <!-- more -->
 
-![](/vue/pinia/bg1.jpg)
-
 ## 废话少说，上代码
 
 ```sh
@@ -23,8 +21,6 @@ yarn add pinia
 npm install pinia
 ```
 
-![](/vue/pinia/bg2.jpg)
-
 ## 配置
 
 ```ts
@@ -32,8 +28,6 @@ npm install pinia
 import { createPinia } from "pinia";
 app.use(pinia);
 ```
-
-![](/vue/pinia/bg3.jpg)
 
 ## 简单定义一个 store
 
@@ -68,8 +62,6 @@ import { storeToRefs } from "pinia";
 const { name, doubleCount } = storeToRefs(store);
 ```
 
-![](/vue/pinia/bg4.jpg)
-
 ## State
 
 ```ts
@@ -102,8 +94,6 @@ store.counter++;
 const store = useStore();
 store.$reset();
 ```
-
-![](/vue/pinia/bg5.jpg)
 
 ## Getters
 
@@ -197,8 +187,6 @@ export const useStore = defineStore("main", {
 });
 ```
 
-![](/vue/pinia/bg6.jpg)
-
 ## Actions
 
 Actions 相当于组件中的 methods。 它们可以使用 defineStore() 中的 actions 属性定义，并且**它们非常适合定义业务逻辑：**
@@ -287,8 +275,6 @@ export const useStore = defineStore("main", {
   },
 });
 ```
-
-![](/vue/pinia/bg7.jpg)
 
 ## Plugins
 

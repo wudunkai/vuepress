@@ -13,8 +13,6 @@ TypeScript 是 JavaScript 的超集，遵循最新的 es6、es5 规范。TypeScr
 
 <!-- more -->
 
-![](/javascript/typescript/bg1.png)
-
 ## 1.TypeScript 中的数据类型
 
 ```ts
@@ -97,8 +95,6 @@ a = (() => {
 })();
 ```
 
-![](/javascript/typescript/bg2.png)
-
 ## 2.TypeScript 中的函数
 
 ```ts
@@ -174,8 +170,6 @@ getInfo(true); // 错误写法
 // 箭头函数 this 指向的问题 箭头函数里面的 this 指向上下文
 setTimeout(() => {}, 100);
 ```
-
-![](/javascript/typescript/bg3.png)
 
 ## 3.TypeScript 的类
 
@@ -373,8 +367,6 @@ const d = new Dog("小狗");
 console.log(d.eat());
 ```
 
-![](/javascript/typescript/bg4.png)
-
 ## 4.TypeScript 属性的接口
 
 接口的作用，在面向对象的编程中，接口是一种规范的定义，它定义了行为和动作的规范，在程序设计里面，接口起到一种限制和规范作用，接口定义了某一批类所需要遵守的规范，接口不关心这些类的内部状态数据，也不关心这些类里面方法的实现细节，它只规定这批类里必须提供某些方法，提供这些方法的类就可以满足实际需要。typescript 中的接口类似于 java，同时还增加了更灵活的接口类型，包括属性、函数、可索引和类等。
@@ -507,8 +499,6 @@ class Web extends Programmer implements Person {
 }
 let w = new Web("张三");
 ```
-
-![](/javascript/typescript/bg5.png)
 
 ## 5.TypeScript 中的泛型
 
@@ -651,8 +641,6 @@ let oMysql = new MysqlDb<User>();
 oMysql.add(u);
 ```
 
-![](/javascript/typescript/bg6.png)
-
 ## 6.TypeScript 中的模块
 
 ```ts
@@ -706,8 +694,6 @@ u.username = "张三";
 u.password = "123";
 oMysql.add(u);
 ```
-
-![](/javascript/typescript/bg7.png)
 
 ## 7.TypeScript 命名空间
 
@@ -764,8 +750,6 @@ let d = new A.Person("张三");
 d.eat();
 d.work("在工作");
 ```
-
-![](/javascript/typescript/bg8.png)
 
 ## 8.TypeScript 装饰器
 

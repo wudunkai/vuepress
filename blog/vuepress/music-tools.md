@@ -12,8 +12,6 @@ tag:
 
 <!-- more -->
 
-![](/vuePress/bg1.png)
-
 ## 了解客户端配置的使用方法（client）
 
 在客户端配置文件中，@vuepress/client 包提供了一个 defineClientConfig 函数来帮助你定义客户端配置：
@@ -30,8 +28,6 @@ export default defineClientConfig({
 ```
 
 ==defineClientConfig== 方法里面的 api 使用，可以查看[官方文档](http://www.fenovice.com/doc/vuepress-next/advanced/cookbook/usage-of-client-config.html)
-
-![](/vuePress/bg2.png)
 
 ## 使用 api 方法创建公共组件
 
@@ -70,8 +66,6 @@ export default defineClientConfig({
   rootComponents: [],
 });
 ```
-
-![](/vuePress/bg3.png)
 
 ## 创建播放音乐组件
 

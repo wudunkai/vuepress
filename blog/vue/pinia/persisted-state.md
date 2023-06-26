@@ -13,8 +13,6 @@ Vue3 pinia 数据持久化插件 pinia-plugin-persistedstate 使用
 
 <!-- more -->
 
-![](/vue/pinia/bg1.png)
-
 ## 废话少说，上代码
 
 ### 安装
@@ -49,8 +47,6 @@ export const main = defineStore("main", {
   // ...省略
 });
 ```
-
-![](/vue/pinia/bg2.png)
 
 ## 进阶用法
 
@@ -112,8 +108,6 @@ export const useStore = defineStore("main", {
   ],
 });
 ```
-
-![](/vue/pinia/bg3.png)
 
 ## 插件 api 了解
 
