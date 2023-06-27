@@ -4,7 +4,7 @@ category:
   - Vue
 tag:
   - Vue3
-  - Pinia
+  - Nodejs
 ---
 
 # 项目中大文件的上传实现原理
