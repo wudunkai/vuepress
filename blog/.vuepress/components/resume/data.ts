@@ -19,7 +19,7 @@ export default {
       start_time: "2016-09",
       end_time: "2019-07",
       major: "人工智能专业",
-      diploma: 1,
+      diploma: 3,
       descriptions: [
         "担任xx职务，获国家励志奖学金x次，一等奖学金x次。",
         "参与xxxxx活动，经历经历经历经历经历经历经。",
