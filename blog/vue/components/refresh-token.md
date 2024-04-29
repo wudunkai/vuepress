@@ -95,16 +95,27 @@ const instance = axios.create({
 let isRefreshing = false;
 // 重试队列，每一项将是一个待执行的函数形式
 let requests = [];
+// 请求接口白名单
+const whiteList = ["public/login"];
 
 instance.interceptors.request.use(
   (config) => {
+    if (whiteList.includes(config.url)) return config;
     const currentTime = new Date().getTime();
     const loginTime = Number(localStorage.getItem("loginTime"));
     // 登录后在有效期内 超过5分钟刷新一次token
     if (loginTime && currentTime - loginTime > 300000) {
+      // 正在刷新token，将返回一个未执行resolve的promise
+      let retry = new Promise((resolve, reject) => {
+        // 将resolve放进队列，用一个函数形式来保存，等token刷新后直接执行
+        requests.push((token) => {
+          config.headers["X-Token"] = token;
+          resolve(config);
+        });
+      });
       if (!isRefreshing) {
         isRefreshing = true;
-        return refreshToken()
+        refreshToken()
           .then((res) => {
             const { token } = res.data;
             instance.setToken(token);
@@ -112,7 +123,6 @@ instance.interceptors.request.use(
             // 已经刷新了token，将所有队列中的请求进行重试
             requests.forEach((cb) => cb(token));
             requests = [];
-            return instance(config);
           })
           .catch((res) => {
             console.error("refreshToken error =>", res);
@@ -121,16 +131,8 @@ instance.interceptors.request.use(
           .finally(() => {
             isRefreshing = false;
           });
-      } else {
-        // 正在刷新token，将返回一个未执行resolve的promise
-        return new Promise((resolve) => {
-          // 将resolve放进队列，用一个函数形式来保存，等token刷新后直接执行
-          requests.push((token) => {
-            config.headers["X-Token"] = token;
-            resolve(instance(config));
-          });
-        });
       }
+      return retry;
     }
     return config;
   },
