@@ -15,6 +15,9 @@ const CursorEffects = defineAsyncComponent(
 const ResumeModify = defineAsyncComponent(
   () => import("./components/resume/ResumeModify.vue")
 );
+const StringMethod = defineAsyncComponent(
+  () => import("./components/StringMethod.vue")
+);
 
 export default defineClientConfig({
   enhance({ app }) {
@@ -23,6 +26,7 @@ export default defineClientConfig({
     app.component("Content", Content);
     app.component("Title", Title);
     app.component("ResumeModify", ResumeModify);
+    app.component("StringMethod", StringMethod);
   },
   setup() {},
   rootComponents: [NavMusic, CursorEffects],
